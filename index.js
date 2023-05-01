@@ -10,12 +10,11 @@ const port = 3001
 const token = '1ea755ea1ea755ea1ea755ea4d1db49e8511ea71ea755ea7aecc9153d03fedd15bd59a8'
 const version = 5.131
 
-
 const urlencodedPareser = bodyParser.urlencoded({ extended: false })
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://api.vk.com/']
+    origin: ['http://localhost:3000', 'https://api.vk.com/', 'https://back-tvk.vercel.app/', 'http://localhost:3001']
 }))
 app.use("/api/product.js", product)
 app.get('/albom', async (req, res) => {

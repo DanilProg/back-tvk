@@ -14,7 +14,7 @@ const urlencodedPareser = bodyParser.urlencoded({ extended: false })
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://api.vk.com/', 'https://back-tvk.vercel.app/', 'http://localhost:3001']
+    origin: ['http://localhost:3000', 'https://api.vk.com/', 'https://back-tvk.vercel.app/', 'http://localhost:3001', 'https://back-tvk.vercel.app/bot']
 }))
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['*']);

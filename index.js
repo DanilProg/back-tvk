@@ -3,6 +3,7 @@ import cors from 'cors'
 import fetch from 'node-fetch'
 import bodyParser from "body-parser";
 import {sendBot} from "./Bot/bot.js";
+import product from './api/product.js'
 
 const app = express()
 const port = 3001
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use(cors({
     origin: ['http://localhost:3000', 'https://api.vk.com/']
 }))
+app.use("/api/product.js", product)
 app.get('/albom', async (req, res) => {
     try {
         let response = await fetch(`https://api.vk.com/method/photos.get?album_id=${req.query.album_id}&access_token=${token}&v=${version}&owner_id=-106770370`);

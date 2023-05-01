@@ -38,6 +38,9 @@ app.get('/albom', async (req, res) => {
 app.post('/bot', urlencodedPareser, (req, res) => {
     try {
         sendBot(req.body.name, req.body.value, req.body.selectOption)
+        res.json({
+            msg:'Отправка успешно'
+        })
     }catch (e) {
         console.log(e)
         res.status(500).json({msg:'Bot Error'})

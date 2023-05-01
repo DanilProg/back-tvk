@@ -12,4 +12,4 @@ router.get('/', (req, res) => {
         return res.status(500).send('server error')
     }
 })
-module.exports = router
+export default router
